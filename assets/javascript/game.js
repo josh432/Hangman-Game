@@ -22,6 +22,8 @@ var words = [
 var randomNumber = Math.floor(Math.random() * words.length);
 var chosenWord = words[randomNumber];
 var numDash = [];
+var correctWord = [];
+var wrongWord = [];
 console.log(chosenWord);
 
 //Create '_' based on word length
@@ -41,8 +43,16 @@ document.onkeyup = function(event) {
 	console.log(event);
 	var userGuess = event.key;
 	console.log(chosenWord.indexOf(userGuess));
-	if (userGuess.indexOf(chosenWord) > -1)
-	console.log(true);	
+
+	//if user guesses correctly
+	if (chosenWord.indexOf(userGuess) > -1) { //this line may need work, tricky code//
+	console.log(true);
+	correctWord.push(userGuess);
+	console.log(correctWord);
+	} else { 
+	wrongWord.push(userGuess);
+	console.log(wrongWord);
+	}	
 }
 //Check if letter in Guess
 //If Right push to win area
