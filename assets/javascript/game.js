@@ -55,12 +55,18 @@ document.onkeyup = function(event) {
 	//replaces dash with correct letter
 	underScore[chosenWord.indexOf(userGuess)] = userGuess;
 	console.log(underScore);
+	if (underScore.join('') == chosenWord) {
+		alert('You Won!');
+	}
 	//If wrong push to loss area
 	} else { 
 	wrongWord.push(userGuess);
 	console.log(wrongWord);
 	}	
 }
+
+
+
 
 
 
