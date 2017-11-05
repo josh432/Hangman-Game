@@ -21,18 +21,18 @@ var words = [
 
 var randomNumber = Math.floor(Math.random() * words.length);
 var chosenWord = words[randomNumber];
-var numDash = [];
+var underScore = [];
 var correctWord = [];
 var wrongWord = [];
 console.log(chosenWord);
 
 //Create '_' based on word length
 
-var createDash = function() {
+function createDash() {
 	for (var i = 0; i < chosenWord.length; i++){
-		numDash.push('_');
+		underScore.push('_');
 	}
-	return numDash;
+	return underScore;
 }
 
 console.log(createDash());
@@ -44,19 +44,26 @@ document.onkeyup = function(event) {
 	var userGuess = event.key;
 	console.log(chosenWord.indexOf(userGuess));
 
-	//if user guesses correctly
+	//if user guesses correctly, check to see if word in generated word
 	if (chosenWord.indexOf(userGuess) > -1) { //this line may need work, tricky code//
 	console.log(true);
+
+	//If Right push to win area
 	correctWord.push(userGuess);
 	console.log(correctWord);
+
+	//replaces dash with correct letter
+	underScore[chosenWord.indexOf(userGuess)] = userGuess;
+	console.log(underScore);
+	//If wrong push to loss area
 	} else { 
 	wrongWord.push(userGuess);
 	console.log(wrongWord);
 	}	
 }
-//Check if letter in Guess
-//If Right push to win area
-//If wrong push to loss area
+
+
+
 
 
 
