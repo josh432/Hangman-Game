@@ -26,11 +26,14 @@ var correctWord = [];
 var wrongWord = [];
 console.log(chosenWord);
 
+var underScoreArea = document.getElementById('wordToGuess')
+
 //Create '_' based on word length
 
 function createDash() {
 	for (var i = 0; i < chosenWord.length; i++){
 		underScore.push('_');
+
 	}
 	return underScore;
 }
@@ -64,6 +67,8 @@ document.onkeyup = function(event) {
 	console.log(wrongWord);
 	}	
 }
+
+underScoreArea.innerHTML = "testing";
 
 
 
