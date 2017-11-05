@@ -22,7 +22,7 @@ var words = [
 var randomNumber = Math.floor(Math.random() * words.length);
 var chosenWord = words[randomNumber];
 var numDash = [];
-//console.log(chosenWord);
+console.log(chosenWord);
 
 //Create '_' based on word length
 
@@ -33,9 +33,17 @@ var createDash = function() {
 	return numDash;
 }
 
-//console.log(createDash());
+console.log(createDash());
 
 //Get User Guess
+
+document.onkeyup = function(event) {
+	console.log(event);
+	var userGuess = event.key;
+	console.log(chosenWord.indexOf(userGuess));
+	if (userGuess.indexOf(chosenWord) > -1)
+	console.log(true);	
+}
 //Check if letter in Guess
 //If Right push to win area
 //If wrong push to loss area
