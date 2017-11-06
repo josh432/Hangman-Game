@@ -26,7 +26,7 @@ var correctWord = [];
 var wrongWord = [];
 console.log(chosenWord);
 
-var underScoreArea = document.getElementById('wordToGuess')
+var underScoreArea = document.getElementById('wordToGuess');
 
 //Create '_' based on word length
 
@@ -38,13 +38,13 @@ function createDash() {
 	return underScore;
 }
 
-console.log(createDash());
+//console.log(createDash());
 
 //Get User Guess
 
 document.onkeyup = function(event) {
 	console.log(event);
-	var userGuess = event.key;
+	var userGuess = event.key.toLowerCase();
 	console.log(chosenWord.indexOf(userGuess));
 
 	//if user guesses correctly, check to see if word in generated word
@@ -57,7 +57,8 @@ document.onkeyup = function(event) {
 
 	//replaces dash with correct letter
 	underScore[chosenWord.indexOf(userGuess)] = userGuess;
-	console.log(underScore);
+	underScoreArea.innerHTML = underScore.join(' ');
+	//console.log(underScore);
 	if (underScore.join('') == chosenWord) {
 		alert('You Won!');
 	}
@@ -68,7 +69,8 @@ document.onkeyup = function(event) {
 	}	
 }
 
-underScoreArea.innerHTML = "testing";
+//underScoreArea.innerHTML = "text";
+underScoreArea.innerHTML = createDash().join(' ');
 
 
 
