@@ -27,6 +27,7 @@ var wrongWord = [];
 console.log(chosenWord);
 
 var underScoreArea = document.getElementById('wordToGuess');
+var wrongGuessArea = document.getElementById('letterGuessedWrong');
 
 //Create '_' based on word length
 
@@ -51,7 +52,7 @@ document.onkeyup = function(event) {
 	if (chosenWord.indexOf(userGuess) > -1) { //this line may need work, tricky code//
 	console.log(true);
 
-	//If Right push to win area
+	//If Right push to word to guess
 	correctWord.push(userGuess);
 	console.log(correctWord);
 
@@ -62,9 +63,10 @@ document.onkeyup = function(event) {
 	if (underScore.join('') == chosenWord) {
 		alert('You Won!');
 	}
-	//If wrong push to loss area
+	//If wrong push letter to letter wrong guess area
 	} else { 
 	wrongWord.push(userGuess);
+	wrongGuessArea.innerHTML = wrongWord;
 	console.log(wrongWord);
 	}	
 }
