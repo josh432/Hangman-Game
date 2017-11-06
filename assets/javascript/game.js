@@ -24,6 +24,7 @@ var chosenWord = words[randomNumber];
 var underScore = [];
 var correctWord = [];
 var wrongWord = [];
+var guessesLeft = 20;
 console.log(chosenWord);
 
 var underScoreArea = document.getElementById('wordToGuess');
@@ -55,6 +56,8 @@ document.onkeyup = function(event) {
 	//If Right push to word to guess
 	correctWord.push(userGuess);
 	console.log(correctWord);
+	guessesLeft--;
+	document.getElementById('numGuesses').innerHTML = guessesLeft;
 
 	//replaces dash with correct letter
 	underScore[chosenWord.indexOf(userGuess)] = userGuess;
@@ -68,11 +71,14 @@ document.onkeyup = function(event) {
 	wrongWord.push(userGuess);
 	wrongGuessArea.innerHTML = wrongWord;
 	console.log(wrongWord);
+	guessesLeft--;
+	document.getElementById('numGuesses').innerHTML = guessesLeft;
 	}	
 }
 
 //underScoreArea.innerHTML = "text";
 underScoreArea.innerHTML = createDash().join(' ');
+
 
 
 
