@@ -74,7 +74,7 @@ document.onkeyup = function(event) {
 		document.getElementById('gamesLost').innerHTML = losses;
 	};
 
-	//If letter isn't present, push letter to wrong guess area, reduce guesses left area.
+	//If letter isn't present, push letter to letters guessed area & reduce guesses left.
 	wrongWord.push(userGuess);
 	wrongGuessArea.innerHTML = wrongWord;
 	console.log(wrongWord);
@@ -96,10 +96,11 @@ function createDash() {
 	return underScore;
 };
 
+function resetGame() {
+	randomNumber = Math.floor(Math.random() * words.length);
+	chosenWord = words[randomNumber];
+	underScoreArea.innerHTML = createDash().join(' ');
+	guessesLeft = 20;
 
-
-
-
-
-
-
+	console.log(chosenWord);
+};
