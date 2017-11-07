@@ -6,13 +6,15 @@
 <title>Hangman Game</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+<link href="https://fonts.googleapis.com/css?family=Sofadi+One|Ubuntu" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
 	<main class="container">
 		<div class="jumbotron">
-			<h1>Hangman Game</h1>
-			<h3>Jungle Safari - Guess the Animal!</h3>
+			<h1>Jungle Safari Hangman</h1>
+			<h3>Guess the Animal!</h3>
 		</div>
 
 		<div class="panel panel-default">
@@ -21,19 +23,31 @@
 			<h3 class="panel-title">Word to Guess</h3>
 		</div>
 		<div class="panel-body">
-			<h2 id="wordToGuess"></h2>
+			<h1 id="wordToGuess"></h1>
 		</div>
 	</div>
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			Guesses Left: <span id="numGuesses"></span>
+			<h3>Guesses Left:</h3> <span id="numGuesses"></span>
 		</div>
 	</div>
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			Wrong Guesses: <span id="letterGuessedWrong"></span>
+		<h3>Wrong Guesses:</h3> <span id="letterGuessedWrong"></span>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<h3>Wins:</h3> <span id="gamesWon"></span>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<h3>Losses:</h3> <span id="gamesLost"></span>
 		</div>
 	</div>
 

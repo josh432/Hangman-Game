@@ -1,4 +1,4 @@
-//game.js
+//game.js first attempt
 //Create word array
 var words = [
 "lion",
@@ -25,6 +25,8 @@ var underScore = [];
 var correctWord = [];
 var wrongWord = [];
 var guessesLeft = 20;
+var wins = 0;
+var losses = 0;
 console.log(chosenWord);
 
 var underScoreArea = document.getElementById('wordToGuess');
@@ -65,6 +67,9 @@ document.onkeyup = function(event) {
 	//console.log(underScore);
 	if (underScore.join('') == chosenWord) {
 		alert('You Won!');
+		++wins;
+		document.getElementById('gamesWon').innerHTML = wins;
+
 	}
 	//If wrong push letter to letter wrong guess area
 	} else { 
@@ -74,7 +79,10 @@ document.onkeyup = function(event) {
 	guessesLeft--;
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
 	}	
-}
+};
+
+
+
 
 //underScoreArea.innerHTML = "text";
 underScoreArea.innerHTML = createDash().join(' ');
