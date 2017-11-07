@@ -49,7 +49,7 @@ document.onkeyup = function(event) {
 	if (chosenWord.indexOf(userGuess) > -1) { //this line may need work, tricky code//
 	console.log(true);
 
-	//If letter is present, push to word to guess area
+	//If letter is present, push to word to correct guess area and reduce guesses left.
 	correctWord.push(userGuess);
 	console.log(correctWord);
 	guessesLeft--;
@@ -59,20 +59,22 @@ document.onkeyup = function(event) {
 	underScore[chosenWord.indexOf(userGuess)] = userGuess;
 	underScoreArea.innerHTML = underScore.join(' ');
 	//console.log(underScore);
+
+	//if letters/underscores match computer's word, user wins game, update win area.
 	if (underScore.join('') == chosenWord) {
 		alert('You Won!');
 		++wins;
 		document.getElementById('gamesWon').innerHTML = wins;
 
 	};
-	//If letter isn't present, push letter to letter wrong guess area
+	//else, if there are no more guesses left, user loses game, update loss area.
 	} else if (guessesLeft === 0) {
 		alert('You lose!');
 		++losses;
 		document.getElementById('gamesLost').innerHTML = losses;
 	};
 
-
+	//If letter isn't present, push letter to wrong guess area.
 	wrongWord.push(userGuess);
 	wrongGuessArea.innerHTML = wrongWord;
 	console.log(wrongWord);
