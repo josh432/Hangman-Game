@@ -51,11 +51,11 @@ document.onkeyup = function(event) {
 	var userGuess = event.key.toLowerCase();
 	console.log(chosenWord.indexOf(userGuess));
 
-	//if user guesses correctly, check to see if word in generated word
+	//if user guesses correctly, check to see if letter in generated word
 	if (chosenWord.indexOf(userGuess) > -1) { //this line may need work, tricky code//
 	console.log(true);
 
-	//If Right push to word to guess
+	//If letter is present, push to word to guess area
 	correctWord.push(userGuess);
 	console.log(correctWord);
 	guessesLeft--;
@@ -71,7 +71,7 @@ document.onkeyup = function(event) {
 		document.getElementById('gamesWon').innerHTML = wins;
 
 	}
-	//If wrong push letter to letter wrong guess area
+	//If letter isn't present, push letter to letter wrong guess area
 	} else { 
 	wrongWord.push(userGuess);
 	wrongGuessArea.innerHTML = wrongWord;

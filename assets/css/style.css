@@ -11,7 +11,8 @@ h1 {
 	font-family: 'Sofadi One', cursive;
 }
 
-h2, h3 {
+
+h3, p {
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -19,6 +20,12 @@ body {
 	background: url("../images/jungle.jpeg") no-repeat;
 	background-size: cover;
 
+
+}
+
+span {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1em;
 
 }
 
