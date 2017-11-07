@@ -74,7 +74,7 @@ document.onkeyup = function(event) {
 		document.getElementById('gamesLost').innerHTML = losses;
 	};
 
-	//If letter isn't present, push letter to wrong guess area.
+	//If letter isn't present, push letter to wrong guess area, reduce guesses left area.
 	wrongWord.push(userGuess);
 	wrongGuessArea.innerHTML = wrongWord;
 	console.log(wrongWord);
