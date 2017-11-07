@@ -35,6 +35,7 @@ var wrongGuessArea = document.getElementById('letterGuessedWrong');
 //Create '_' based on word length
 
 underScoreArea.innerHTML = createDash().join(' ');
+numGuesses.innerHTML = guessesLeft;
 
 //console.log(createDash());
 
@@ -68,7 +69,7 @@ document.onkeyup = function(event) {
 
 	};
 	//else, if there are no more guesses left, user loses game, update loss area.
-	} else if (guessesLeft === 0) {
+	} else if (guessesLeft <= 1) {
 		alert('You lose!');
 		++losses;
 		document.getElementById('gamesLost').innerHTML = losses;
