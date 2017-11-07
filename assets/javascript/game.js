@@ -34,13 +34,7 @@ var wrongGuessArea = document.getElementById('letterGuessedWrong');
 
 //Create '_' based on word length
 
-function createDash() {
-	for (var i = 0; i < chosenWord.length; i++){
-		underScore.push('_');
-
-	}
-	return underScore;
-}
+underScoreArea.innerHTML = createDash().join(' ');
 
 //console.log(createDash());
 
@@ -70,24 +64,35 @@ document.onkeyup = function(event) {
 		++wins;
 		document.getElementById('gamesWon').innerHTML = wins;
 
-	}
+	};
 	//If letter isn't present, push letter to letter wrong guess area
-	} else { 
+	} else if (guessesLeft === 0) {
+		alert('You lose!');
+		++losses;
+		document.getElementById('gamesLost').innerHTML = losses;
+	};
+
+
 	wrongWord.push(userGuess);
 	wrongGuessArea.innerHTML = wrongWord;
 	console.log(wrongWord);
 	guessesLeft--;
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
-	}	
-};
+	};
 
 
 
 
 //underScoreArea.innerHTML = "text";
-underScoreArea.innerHTML = createDash().join(' ');
 
 
+function createDash() {
+	for (var i = 0; i < chosenWord.length; i++){
+		underScore.push('_');
+
+	};
+	return underScore;
+};
 
 
 
