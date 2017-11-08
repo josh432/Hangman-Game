@@ -52,7 +52,7 @@ document.onkeyup = function(event) {
 	//If letter is present, push to word to correct guess area and reduce guesses left.
 	correctWord.push(userGuess);
 	console.log(correctWord);
-	guessesLeft--;
+	//guessesLeft--;
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
 
 	//replaces dash with correct letter
